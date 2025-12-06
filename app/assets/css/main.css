@@ -1,0 +1,22 @@
+@import './variables.css';
+@import './reset.css';
+
+/* Font Imports */
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-VariableFont.ttf') format('truetype-variations');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Inter Font Configuration */
+body {
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: 'Inter', sans-serif;
+  font-feature-settings: 'salt' on, 'ss01' on, 'ss03' on, 'ss04' on;
+}
+
+
+
