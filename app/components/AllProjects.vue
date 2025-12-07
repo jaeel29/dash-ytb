@@ -105,7 +105,7 @@
 
 .project-card {
 	grid-column: span 2;
-	border: 1px solid var(--neutral-100);
+	border: 1px solid var(--border-primary);
 	border-radius: 12px;
 	overflow: hidden;
 	background: var(--bg-primary);
@@ -118,22 +118,22 @@
 }
 
 .project-card:hover {
-	border-color: var(--neutral-200);
+	border-color: var(--border-secondary);
 }
 
 .card-preview {
-	border-bottom: 1px solid var(--neutral-100);
+	border-bottom: 1px solid var(--border-primary);
 	overflow: hidden;
-	background: var(--white);
+	background: var(--bg-tertiary);
 	transition: all 0.2s;
 	cursor: pointer;
 	height: 150px;
 	background-image: repeating-linear-gradient(
 		45deg,
-		transparent,
-		transparent 10px,
-		var(--neutral-100) 10px,
-		var(--neutral-100) 11px
+		var(--bg-tertiary),
+		var(--bg-tertiary) 10px,
+		var(--border-primary) 10px,
+		var(--border-primary) 11px
 	);
 }
 

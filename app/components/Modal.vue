@@ -88,8 +88,10 @@ watch(
 	() => props.modelValue,
 	(isOpen) => {
 		if (isOpen) {
+			// document.documentElement.style.scrollbarGutter = 'auto';
 			document.body.style.overflow = 'hidden';
 		} else {
+			// document.documentElement.style.scrollbarGutter = '';
 			document.body.style.overflow = '';
 		}
 	}

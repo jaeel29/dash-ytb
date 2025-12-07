@@ -49,11 +49,45 @@
 				<Icon name="lucide:settings" size="20" mode="svg" />
 				<span>Settings</span>
 			</NuxtLink>
+
+			<!-- Theme Switcher -->
+			<ClientOnly>
+				<div class="theme-switcher">
+					<button
+						@click="setTheme('system')"
+						class="theme-option"
+						:class="{ active: selectedTheme === 'system' }"
+						aria-label="System theme"
+					>
+						<Icon name="lucide:monitor" size="18" mode="svg" />
+					</button>
+					<button
+						@click="setTheme('light')"
+						class="theme-option"
+						:class="{ active: selectedTheme === 'light' }"
+						aria-label="Light theme"
+					>
+						<Icon name="lucide:sun" size="18" mode="svg" />
+					</button>
+					<button
+						@click="setTheme('dark')"
+						class="theme-option"
+						:class="{ active: selectedTheme === 'dark' }"
+						aria-label="Dark theme"
+					>
+						<Icon name="lucide:moon" size="18" mode="svg" />
+					</button>
+				</div>
+			</ClientOnly>
 		</nav>
 	</aside>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useTheme } from '~/composables/useTheme';
+
+const { selectedTheme, setTheme } = useTheme();
+</script>
 
 <style scoped>
 .sidebar {
@@ -63,7 +97,7 @@
 	width: 280px;
 	height: 100vh;
 	background: var(--bg-primary);
-	border-right: 1px solid var(--neutral-50);
+	border-right: 1px solid var(--border-primary);
 	display: flex;
 	flex-direction: column;
 	padding: 20px;
@@ -129,6 +163,41 @@
 	flex-direction: column;
 	gap: 2px;
 	padding-top: 16px;
-	border-top: 1px solid var(--neutral-100);
+	border-top: 1px solid var(--border-primary);
+}
+
+.theme-switcher {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	padding: 4px;
+	background: var(--bg-secondary);
+	border-radius: 8px;
+	margin-top: 8px;
+}
+
+.theme-option {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 8px;
+	background: transparent;
+	border: none;
+	border-radius: 6px;
+	color: var(--text-secondary);
+	cursor: pointer;
+	transition: all 0.2s;
+}
+
+.theme-option:hover {
+	color: var(--text-primary);
+	background: var(--bg-hover);
+}
+
+.theme-option.active {
+	background: var(--bg-primary);
+	color: var(--text-primary);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 </style>

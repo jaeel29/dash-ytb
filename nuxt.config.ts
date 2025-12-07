@@ -5,16 +5,12 @@ export default defineNuxtConfig({
 
   modules: [
     '@nuxt/icon',
-    '@nuxt/fonts',
     '@nuxt/eslint',
     '@nuxt/image'
   ],
 
-  css: ['~/assets/css/main.css'],
+  css: ['~/assets/css/variables.css','~/assets/css/main.css'],
 
-  fonts: {
-    families: [
-      { name: 'Inter', provider: 'google' }
-    ]
-  }
+
+ 
 })
